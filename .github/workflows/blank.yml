@@ -1,1 +1,31 @@
 
+name: CI/CD Pipeline - Cloud Computing Assignment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Step 1 - Show Current Directory
+        run: pwd
+
+      - name: Step 2 - List Files
+        run: ls -la
+
+      - name: Step 3 - Make Directory
+        run: mkdir my-new-folder
+
+      - name: Step 4 - Echo Message
+        run: echo "I am learning Github Actions"
